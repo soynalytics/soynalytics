@@ -44,4 +44,4 @@ to test everything is running you can cd into ScraperRunner and run `python main
 
 if everything is working you should see some sql commands run.
 
-if you see nothing its probably not working, to verify you can cat `scraper.log` for extra info
+if you see nothing its probably not working, to verify you can `cat scraper.log` for extra info
