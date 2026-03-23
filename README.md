@@ -36,6 +36,8 @@ after you have got the database and user setup correctly, now you need to plug t
 
 after that you need to set the variable `$SOYSCRAPERDBCREDS` 
 
-make sure to set the path correctly `export SOYSCRAPERDBCREDS=Path/To/SoyScraper/credentials.json`
+make sure to set the path correctly `export SOYSCRAPERDBCREDS=Path/To/soynalytics/credentials.json`
+
+you also need to give `credentials.json` a valid `mccaptcha` cookie
 
 
