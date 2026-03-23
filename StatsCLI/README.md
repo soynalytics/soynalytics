@@ -4,7 +4,7 @@ StatsCLI consists of 3 main programs.
 
 premade.py is the easiest to use as all of its command are premade (hence the name)
 
-however if you want to write more indepth and complicated commands you can use line.py or scatter.py
+however if you want to write more indepth and complicated commands you can use `line.py` or `scatter.py`
 
 for line graphs and scatter plots respectively 
 
