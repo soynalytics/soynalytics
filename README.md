@@ -26,7 +26,16 @@ then run `python3 -m pip3 install -r requirements.txt`
 
 ## DB Setup:
 
-run the `soyjak_schema.sql` or `soyjak.sql` file with whatever database engine you like (i've tried mariadb and mysql and both work fine although you may have to tweak the script accordingly)
+run the `soyjak_schema.sql` or `soyjak.sql` file with whatever database engine you like 
+
+(i've tried mariadb and mysql and both work fine although you may have to tweak the script accordingly)
 
 make sure you create your user and give it the required privileges.
+
+after you have got the database and user setup correctly, now you need to plug those credentials into the `credentials.json` file
+
+after that you need to set the variable `$SOYSCRAPERDBCREDS` 
+
+make sure to set the path correctly `export SOYSCRAPERDBCREDS=Path/To/SoyScraper/credentials.json`
+
 
