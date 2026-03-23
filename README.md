@@ -1,16 +1,15 @@
-## Hi there 👋
+# Soy Analytics
 
-<!--
-**soynalytics/soynalytics** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Program to collect and analyze usage data from soyjak.st
 
-Here are some ideas to get you started:
+## SoyScraper
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+Collects information from soyjak.st
+
+## StatsCLI
+
+Create graphs from collected information with matplotlib
+
+## StatsWebapp
+
+Create graphs in an easy to use webapp
