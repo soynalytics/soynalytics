@@ -30,7 +30,15 @@ plot pph /soy/: `python premade.py pph soy`
 
 plot pph and num posters: `python premade.py pphposters soy`
 
-plot pph /soy/ where time greater than 23/03/2026 `python premade.py pph soy --ltime "2026-03-23T00:00:00Z"`
+plot pph /soy/ where time greater than 23/03/2026: `python premade.py pph soy --ltime "2026-03-23T00:00:00Z"`
+
+plot active content on server: `python premade.py content`
+
+plot /soy/ pph and jewdar spam: `python premade.py pphjewdar`
+
+scatter plot news: `python premade.py news` 
+
+scatter plot description changes for board: `python premade.py descriptions soy`
 
 ## line.py
 
