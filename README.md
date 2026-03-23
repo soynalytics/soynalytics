@@ -40,4 +40,8 @@ make sure to set the path correctly `export SOYSCRAPERDBCREDS=Path/To/soynalytic
 
 you also need to give `credentials.json` a valid `mccaptcha` cookie
 
+to test everything is running you can cd into ScraperRunner and run `python main.py -n -v`
 
+if everything is working you should see some sql commands run.
+
+if you see nothing its probably not working, to verify you can cat `scraper.log` for extra info
