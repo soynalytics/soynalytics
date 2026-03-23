@@ -2,7 +2,7 @@
 
 StatsCLI consists of 3 main programs.
 
-premade.py is the easiest to use as all of its command are premade (hence the name)
+`premade.py` is the easiest to use as all of its command are premade (hence the name)
 
 however if you want to write more indepth and complicated commands you can use `line.py` or `scatter.py`
 
@@ -31,3 +31,7 @@ plot pph /soy/: `python premade.py pph soy`
 plot pph and num posters: `python premade.py pphposters soy`
 
 plot pph /soy/ where time greater than 23/03/2026 `python premade.py pph soy --ltime "2026-03-23T00:00:00Z"`
+
+## line.py
+
+## scatter.py 
