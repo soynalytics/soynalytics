@@ -24,7 +24,7 @@ then run `python3 -m pip3 install -r requirements.txt`
 
 (its recommended to setup the SoyScraper on a dedicated server) 
 
-## DB Setup:
+## Basic Setup:
 
 run the `soyjak_schema.sql` or `soyjak.sql` file with whatever database engine you like 
 
