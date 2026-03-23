@@ -1,0 +1,128 @@
+{
+	"pph": [
+		0,
+		1,
+		[
+			"SELECT time,pph FROM pph WHERE board = '{0}'"
+		],
+		[
+			"--title \"PPH of /{0}/\"",
+			"--llabel \"PPH\"",
+			"--rlabel \"PPH\""
+		]
+	],
+	"pphposters": [
+		0,
+		1,
+		[
+			"SELECT time,pph FROM pph WHERE board = '{0}'",
+			"SELECT time,posters FROM pph WHERE board = '{0}'"
+		],
+		[
+			"--title \"PPH and Posters comparison of /{0}/\"",
+			"--llabel \"PPH\"",
+			"--rlabel \"Posters\""
+		]
+	],
+	"pphjewdar": [
+		0,
+		0,
+		[
+			"SELECT time,pph FROM pph WHERE board = 'soy'",
+			"SELECT time,count FROM jewdar"
+		],
+		[
+			"--title \"PPH and Jewdar comparison of /soy/\"",
+			"--llabel \"PPH\"",
+			"--rlabel \"Jewdar\""
+		]
+	],
+	"rtl": [
+		0,
+		0,
+		[
+			"SELECT time,score FROM rtl"
+		],
+		[
+			"--title \"Rate the log\"",
+			"--llabel \"Score\""
+		]
+	],
+	"rtlvoters": [
+		0,
+		0,
+		[
+			"SELECT time,score FROM rtl",
+			"SELECT time,voters FROM rtl"
+		],
+		[
+			"--title \"RTL score and num voters\"",
+			"--llabel \"Score\"",
+			"--rlabel \"Voters\""
+		]
+	],
+	"content": [
+		0,
+		0,
+		[
+			"SELECT time,content FROM statistics"
+		],
+		[
+			"--title \"Active content on server\"",
+			"--llabel \"GigaBytes\""
+		]
+	],
+	"posters": [
+		0,
+		0,
+		[
+			"SELECT time,posters FROM statistics"
+		],
+		[
+			"--title \"Total posters\"",
+			"--llabel \"Posters\""
+		]
+	],
+	"posts": [
+		0,
+		0,
+		[
+			"SELECT time,posts FROM statistics"
+		],
+		[
+			"--title \"Total posts\"",
+			"--llabel \"Posts\""
+		]
+	],
+	"content": [
+		0,
+		0,
+		[
+			"SELECT time,content FROM statistics"
+		],
+		[
+			"--title \"Active content on server\"",
+			"--llabel \"GigaBytes\""
+		]
+	],
+	"news": [
+		1,
+		0,
+		[
+			"SELECT time FROM news"
+		],
+		[
+			"--title \"Scatter plot of pinned news upload times\""
+		]
+	],
+	"descriptions": [
+		1,
+		1,
+		[
+			"SELECT time FROM descriptions WHERE board = '{0}'"
+		],
+		[
+			"--title \"Scatter plot of /{0}/ board description updates\""
+		]
+	]
+}
