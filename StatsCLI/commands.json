@@ -11,17 +11,37 @@
 			"--rlabel \"PPH\""
 		]
 	],
-	"pphposters": [
+	"pphavgdaily": [
 		0,
 		1,
 		[
-			"SELECT time,pph FROM pph WHERE board = '{0}'",
-			"SELECT time,posters FROM pph WHERE board = '{0}'"
+			"SELECT (time - MOD(time, 86400)) AS hour_start, AVG(pph) AS avg_score FROM pph WHERE board = '{0}' GROUP BY hour_start"
 		],
 		[
-			"--title \"PPH and Posters comparison of /{0}/\"",
-			"--llabel \"PPH\"",
-			"--rlabel \"Posters\""
+			"--title \"PPH daily avg /{0}/\"",
+			"--llabel \"PPH\""
+		]
+	],
+	"pphavgweekly": [
+		0,
+		1,
+		[
+			"SELECT (time - MOD(time, 604800)) AS hour_start, AVG(pph) AS avg_score FROM pph WHERE board = '{0}' GROUP BY hour_start"
+		],
+		[
+			"--title \"PPH weekly avg /{0}/\"",
+			"--llabel \"PPH\""
+		]
+	],
+	"pphavgmonthly": [
+		0,
+		1,
+		[
+			"SELECT UNIX_TIMESTAMP(DATE_FORMAT(FROM_UNIXTIME(time), '%Y-%m-01 00:00:00')) AS month_start, AVG(pph) AS avg_score FROM pph WHERE board = '{0}' GROUP BY month_start"
+		],
+		[
+			"--title \"PPH monthly avg /{0}/\"",
+			"--llabel \"PPH\""
 		]
 	],
 	"pphjewdar": [
@@ -32,7 +52,33 @@
 			"SELECT time,count FROM jewdar"
 		],
 		[
-			"--title \"PPH and Jewdar comparison of /soy/\"",
+			"--title \"PPH and jewdar /soy/\"",
+			"--llabel \"PPH\"",
+			"--rlabel \"Jewdar\""
+		]
+	],
+	"pphjewdaravgdaily": [
+		0,
+		0,
+		[
+			"SELECT (time - MOD(time, 86400)) AS hour_start, AVG(pph) AS avg_score FROM pph WHERE board = 'soy' GROUP BY hour_start ",
+			"SELECT (time - MOD(time, 86400)) AS hour_start, AVG(count) AS avg_score FROM jewdar GROUP BY hour_start "
+		],
+		[
+			"--title \"PPH and jewdar weekly avg /soy/\"",
+			"--llabel \"PPH\"",
+			"--rlabel \"Jewdar\""
+		]
+	],
+	"pphjewdaravgweekly": [
+		0,
+		0,
+		[
+			"SELECT (time - MOD(time, 604800)) AS hour_start, AVG(pph) AS avg_score FROM pph WHERE board = 'soy' GROUP BY hour_start ",
+			"SELECT (time - MOD(time, 604800)) AS hour_start, AVG(count) AS avg_score FROM jewdar GROUP BY hour_start "
+		],
+		[
+			"--title \"PPH and jewdar weekly avg /soy/\"",
 			"--llabel \"PPH\"",
 			"--rlabel \"Jewdar\""
 		]
@@ -83,6 +129,17 @@
 			"--llabel \"Posters\""
 		]
 	],
+	"postersavgdaily": [
+		0,
+		0,
+		[
+			"SELECT (time - MOD(time, 86400)) AS hour_start, AVG(posters) AS avg_score FROM statistics GROUP BY hour_start "
+		],
+		[
+			"--title \"Average daily posters\"",
+			"--llabel \"Posters\""
+		]
+	],
 	"posts": [
 		0,
 		0,
@@ -123,6 +180,76 @@
 		],
 		[
 			"--title \"Scatter plot of /{0}/ board description updates\""
+		]
+	],
+	"rtlweeklyavg": [
+		0,
+		0,
+		[
+			"SELECT (time - MOD(time, 604800)) AS hour_start, AVG(score) AS avg_score FROM rtl GROUP BY hour_start "
+		],
+		[
+			"--title \"RTL Weekly average.\"",
+			"--llabel \"RTL\""
+		]
+	],
+	"rtlweeklyavgvoters": [
+		0,
+		0,
+		[
+			"SELECT (time - MOD(time, 604800)) AS hour_start, AVG(score) AS avg_score FROM rtl GROUP BY hour_start",
+			"SELECT (time - MOD(time, 604800)) AS hour_start, AVG(voters) AS avg_score FROM rtl GROUP BY hour_start"
+		],
+		[
+			"--title \"RTL Weekly average with voters.\"",
+			"--llabel \"RTL\"",
+			"--rlabel \"Voters\""
+		]
+	],
+	"rtlweeklyavgvotersonly": [
+		0,
+		0,
+		[
+			"SELECT (time - MOD(time, 604800)) AS hour_start, AVG(voters) AS avg_score FROM rtl GROUP BY hour_start"
+		],
+		[
+			"--title \"RTL Weekly average voters only.\"",
+			"--llabel \"Voters\""
+		]
+	],
+	"rtlmonthlyavg": [
+		0,
+		0,
+		[
+			"SELECT UNIX_TIMESTAMP(DATE_FORMAT(FROM_UNIXTIME(time), '%Y-%m-01 00:00:00')) AS month_start, AVG(score) AS avg_score FROM rtl GROUP BY month_start"
+		],
+		[
+			"--title \"RTL Monthly average.\"",
+			"--llabel \"Score\""
+		]
+	],
+	"rtlmonthlyavgvoters": [
+		0,
+		0,
+		[
+			"SELECT UNIX_TIMESTAMP(DATE_FORMAT(FROM_UNIXTIME(time), '%Y-%m-01 00:00:00')) AS month_start, AVG(score) AS avg_score FROM rtl GROUP BY month_start",
+			"SELECT UNIX_TIMESTAMP(DATE_FORMAT(FROM_UNIXTIME(time), '%Y-%m-01 00:00:00')) AS month_start, AVG(voters) AS avg_score FROM rtl GROUP BY month_start"
+		],
+		[
+			"--title \"RTL Monthly average with voters.\"",
+			"--llabel \"Score\"",
+			"--rlabel \"Voters\""
+		]
+	],
+	"rtlmonthlyavgvotersonly": [
+		0,
+		0,
+		[
+			"SELECT UNIX_TIMESTAMP(DATE_FORMAT(FROM_UNIXTIME(time), '%Y-%m-01 00:00:00')) AS month_start, AVG(voters) AS avg_score FROM rtl GROUP BY month_start"
+		],
+		[
+			"--title \"RTL Monthly average voters only.\"",
+			"--llabel \"Voters\""
 		]
 	]
 }
